@@ -6,8 +6,6 @@ import globalStyles from './styles';
 
 
 import Home from '@/app/(tabs)/index';
-import SavedScreen from './(tabs)/saved';
-import Settings from './(tabs)/settings';
 
 
 const Tab = createBottomTabNavigator();
@@ -28,22 +26,6 @@ const BottomTab = () => {
                     </View>
                 )
             }}/>
-            {/* <Tab.Screen name='Saved' component={SavedScreen} options={{
-                tabBarIcon: ({focused}) => (
-                    <View style={globalStyles.bottomNavItem}>
-                        <Feather name="save" size={24} style={{color:focused ? 'black' : 'grey'}}/>
-                        <Text style={[{color:focused ? 'black' : 'grey'}, globalStyles.text]}>Saved</Text>
-                    </View>
-                )
-            }}/> */}
-            {/* <Tab.Screen name='Settings' component={Settings} options={{
-                tabBarIcon: ({focused}) => (
-                    <View style={globalStyles.bottomNavItem}>
-                        <Feather name="settings" size={24} style={{color:focused ? 'black' : 'grey'}}/>
-                        <Text style={[{color:focused ? 'black' : 'grey'}, globalStyles.text]}>Settings</Text>
-                    </View>
-                )
-            }}/>                         */}
         </Tab.Navigator>
   )
 }

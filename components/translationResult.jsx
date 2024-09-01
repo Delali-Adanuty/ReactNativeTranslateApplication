@@ -1,24 +1,14 @@
-import { Text, View, TouchableOpacity } from 'react-native';
-import React, { useCallback } from 'react';
+import { Text, View } from 'react-native';
+import React from 'react';
 import globalStyles from '@/app/styles';
-import Feather from '@expo/vector-icons/Feather';
-import colors from '@/components/colors';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSavedItems } from '@/store/savedItemsSlice';
+import { useSelector } from 'react-redux';
 import { useColorScheme } from 'react-native';
 
 const TranslationResult = ({itemId}) => {
   const colorScheme = useColorScheme();
-  const dispatch = useDispatch();
-  const history = useSelector(state => state.history.items)
-  const item = useSelector(state => state.history.items.find(item => item.id === itemId));
-  // const savedItems = useSelector(state => state.history.items.filter(item.isSaved === true));
-  // const isSaved = item.isSaved
-  // const iconColor = isSaved ? "black" : colors.lightBlack 
 
-  // const saveItem = (item) => {
-  //   console.log(item)
-  // }
+  const item = useSelector(state => state.history.items.find(item => item.id === itemId));
+
 
   return (
       <View style={[globalStyles.flatlistItem, globalStyles.translationItemContainer]}>
@@ -36,9 +26,6 @@ const TranslationResult = ({itemId}) => {
               {item.initialText}
           </Text>
         </View>
-        {/* <TouchableOpacity onPress={() => saveItem(item)}>
-          <Feather name="star" size={24} color={"black"} />
-        </TouchableOpacity> */}
       </View>
   )
 }

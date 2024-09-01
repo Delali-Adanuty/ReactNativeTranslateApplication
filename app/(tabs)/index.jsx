@@ -16,10 +16,9 @@ import axios from 'axios';
 import { Keyboard } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { useDispatch, useSelector } from 'react-redux';
-import { addHistoryItem, setHistoryItems } from '@/store/historySlice';
+import { addHistoryItem } from '@/store/historySlice';
 import TranslationResult from '@/components/translationResult';
 import uuid from 'react-native-uuid';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useColorScheme } from 'react-native';
 
 
